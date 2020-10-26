@@ -2,7 +2,7 @@ import UIKit
 
 extension UIColor {
     
-    convenience init(_ hexString: String) {
+    public convenience init(_ hexString: String) {
         let hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
         let scanner = Scanner(string: hexString)
         
@@ -26,22 +26,18 @@ extension UIColor {
     }
     
     
-    convenience init(r : CGFloat, g : CGFloat, b : CGFloat, alpha: CGFloat = 1.0) {
+    public convenience init(r : CGFloat, g : CGFloat, b : CGFloat, alpha: CGFloat = 1.0) {
         self.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: alpha)
     }
     
     /// 黑色透明度
-    convenience init(alpha: CGFloat) {
+    public convenience init(alpha: CGFloat) {
         self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: alpha)
     }
 
     
     /// 随机色
-    class func random() -> UIColor {
+    public class func random() -> UIColor {
         return UIColor(red: CGFloat(arc4random()%255)/255, green: CGFloat(arc4random()%255)/255, blue: CGFloat(arc4random()%255)/255, alpha: 1)
-    }
-    
-    public func testMethod() -> String {
-        return "Test"
     }
 }
